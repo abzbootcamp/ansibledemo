@@ -1,0 +1,12 @@
+---
+- name: creating host vars files dynamically
+  hosts: all
+  gather_facts: no
+  
+  tasks:
+    - name: create host vars file
+      copy:
+        content: "id: {{ 1000 | random }}"
+        dest: "inventory/host_vars/{{ inventory_hostname }}.yml"
+    
+        
