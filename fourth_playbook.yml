@@ -1,0 +1,14 @@
+---
+- name: register variable demo
+  hosts: localhost
+  
+  tasks:
+    - name: create a new folder hello
+      file:
+        path: ./hello
+        state: directory
+      register: create_dir
+      
+    - name: debug
+      debug:
+        msg: "{{ create_dir.owner }}"

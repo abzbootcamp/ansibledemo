@@ -1,0 +1,17 @@
+---
+- name: ansible facts demo
+  hosts: localhost
+  
+  tasks:
+  
+    - name: debug ip address of localhost
+      debug:
+        msg: "IPAddress: {{ ansible_facts.default_ipv4.address }}"
+        
+    - name: set fact for default ip address
+      set_fact:
+        default_ip: "{{ ansible_facts.default_ipv4.address }}"
+
+    - name: debug
+      debug:
+        msg: "Default IP is: {{ default_ip }}"

@@ -17,5 +17,10 @@
   tasks:
   
     - name: print john doe's age
+      set_fact:
+        output_age: "{{ users.user1.first_name }} is {{ users.user1.age }} years old"
+      register: register_var
+      
+    - name: debug
       debug:
-        msg: "{{ users.user1.first_name }} is {{ users.user1.age }} years old"
+        msg: "{{ register_var }}"
