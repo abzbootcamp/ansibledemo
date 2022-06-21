@@ -15,3 +15,4 @@
     - name: debug
       debug:
         msg: "Default IP is: {{ default_ip }}"
+  

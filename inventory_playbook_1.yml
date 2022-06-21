@@ -1,0 +1,8 @@
+---
+- name: inventory demo 1
+  hosts: app
+  
+  tasks:
+    - name: debug
+      debug:
+        msg: "This is {{ inventory_hostname }} server. It's color is {{ color }}"

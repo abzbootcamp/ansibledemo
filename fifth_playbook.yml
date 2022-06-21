@@ -1,0 +1,17 @@
+---
+- name: variable precedence demo
+  hosts: localhost
+  
+  vars:
+    fruit: apple
+    
+  tasks:
+    # - name: set fruit fact
+    #   set_fact:
+    #     fruit: strawberry
+    
+    - name: debug
+      vars:
+        fruit: banana
+      debug:
+        msg: "{{ fruit }}"
